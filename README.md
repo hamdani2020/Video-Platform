@@ -56,7 +56,7 @@ To install and run this project locally, follow these steps:
 4. Share video links with others.
 
 ## Contributors
--[Hamdani Alhassan Gandi](www.github.com/hamdani2020)
+- [Hamdani Alhassan Gandi](www.github.com/hamdani2020)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
