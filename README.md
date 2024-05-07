@@ -40,9 +40,14 @@ To install and run this project locally, follow these steps:
 1. Clone this repository.
 ``git clone https://github.com/hamdani2020/Video-Platform.git``
 2. Navigate to the project directory.
-3. Install dependencies using `npm install` or `yarn install`.
-4. Set up the database according to the ER diagram provided.
-5. Start the server using `npm start` or `yarn start`.
+``cd Video-Platform``
+3. Install requirements.
+`` pip3 install -r requirements.txt``
+4. Run migrations
+``python3 manage.py migrate``
+5. Create superuser: ``python3 manage.py createsuperuser``
+6. Start the development server: ``python3 manage.py runserver``
+7. Access the platform at ``http://127.0.0.1:8000/``
 
 ## Usage
 1. Sign up or log in to access the platform.
@@ -50,8 +55,8 @@ To install and run this project locally, follow these steps:
 3. Upload videos (Admin only).
 4. Share video links with others.
 
-## Contributing
-Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
+## Contributors
+-[Hamdani Alhassan Gandi](www.github.com/hamdani2020)
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
