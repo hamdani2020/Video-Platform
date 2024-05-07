@@ -38,6 +38,7 @@ Paul Leonard, a video creator, seeks a tailored video hosting platform to addres
 ## Installation
 To install and run this project locally, follow these steps:
 1. Clone this repository.
+``git clone https://github.com/hamdani2020/Video-Platform.git``
 2. Navigate to the project directory.
 3. Install dependencies using `npm install` or `yarn install`.
 4. Set up the database according to the ER diagram provided.
