@@ -1,4 +1,4 @@
-{% extends 'videos/base.html' %}
+{% extends 'base.html' %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -19,7 +19,7 @@
 				<div class="row">
 					<div class="col-md-6 text-muted">
 						<p>{{ object.date_posted | date:"M d, Y" }}</p>
-                        <a class="category-link" href="{% url 'category-list' object.category.pk %}">{{ object.category }}</a>
+                        <a class="category-link" href="#">{{ object.category }}</a>
 					</div>
 					<div class="col-md-6 text-muted text-right">
 						<ion-icon class="video-icons" name="share-social-outline" type="button"  data-toggle="modal" data-target="#exampleModal">
@@ -78,7 +78,7 @@
                 <button class="btn btn-outline-info btn-block">Post</button>
             </form>
             {% else %}
-            <a class="btn btn-outline-info btn-block" href="{% url 'account_login' %}">Sign In To Post a Comment!</a>
+            <a class="btn btn-outline-info btn-block" href="#">Sign In To Post a Comment!</a>
             {% endif %}
         </div>
     </div>

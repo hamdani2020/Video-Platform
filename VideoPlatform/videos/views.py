@@ -13,7 +13,7 @@ class CreateVideo(CreateView):
     template_name = 'create_video.html'
 
     def get_success_url(self):
-        return reverse('video_detail', kwargs={'pk': self.object.pk})
+        return reverse('video-detail', kwargs={'pk': self.object.pk})
     
 class DetailVideo(DetailView):
     model = Videos
