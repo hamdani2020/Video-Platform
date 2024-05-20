@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse
 #from django.urls import reverse
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from .models import Videos
 
@@ -18,3 +18,20 @@ class CreateVideo(CreateView):
 class DetailVideo(DetailView):
     model = Videos
     template_name = 'detail_video.html'
+
+# Update Video
+class UpdateVideo(UpdateView):
+    model = Videos
+    fields = ['title', 'description']
+    template_name = 'create_video.html'
+
+    def get_success_url(self):
+        return reverse('video-detail', kwargs={'pk': self.object.pk})
+    
+# Delete Video
+class DeleteVideo(DeleteView):
+    model = Videos
+    template_name = 'delete_video.html'
+
+    def get_success_url(self):
+        return reverse('index')

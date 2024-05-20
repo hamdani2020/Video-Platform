@@ -78,7 +78,7 @@
                 <button class="btn btn-outline-info btn-block">Post</button>
             </form>
             {% else %}
-            <a class="btn btn-outline-info btn-block" href="#">Sign In To Post a Comment!</a>
+            <a class="btn btn-outline-info btn-block" href="{% url 'account_login' %}">Sign In To Post a Comment!</a>
             {% endif %}
         </div>
     </div>
