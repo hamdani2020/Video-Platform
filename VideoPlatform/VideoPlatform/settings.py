@@ -42,6 +42,7 @@ SITE_ID = 1
 
 INSTALLED_APPS = [
     'videos',
+    'django.contrib.sites',
 
     'allauth',
     'allauth.account',
