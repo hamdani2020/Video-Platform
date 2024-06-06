@@ -1,5 +1,5 @@
-python3.9 -m venv venv
-source venv/bin/activate
+python3.9 -m venv env
+source env/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
