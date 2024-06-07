@@ -13,7 +13,7 @@
                 <a href="{% url 'video-detail' video.pk %}"><img src="/media/{{ video.thumbnail }}" width="256" height="144"></a>
                 <div class="card-body">
                     <a class="link-text" href="{% url 'video-detail' video.pk %}"><h5 class="text-center">{{ video.title }}</h5></a>
-                    <p class="text-muted text-center m-0">{{ video.user }}</p>
+                    <p class="text-muted text-center m-0">{{ video.uploader }}</p>
                     <p class="text-muted text-center">{{ video.date_posted | date:"M d, Y" }}</p>
                 </div>
             </div>

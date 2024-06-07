@@ -8,7 +8,7 @@
 				<a href="{% url 'video-detail' object.pk %}"><img src="/media/{{ object.thumbnail }}" width="256" height="144"></a>
 				<div class="card-body">
 					<a class="link-text" href="{% url 'video-detail' object.pk %}"><h5 class="text-center">{{ object.title }}</h5></a>
-					<p class="text-muted text-center m-0">{{ object.uploader }}</p>
+					<p class="text-muted text-center m-0">{{ object.user }}</p>
 					<p class="text-muted text-center">{{ object.date_posted | date:"M d, Y" }}</p>
 				</div>
 			</div>
