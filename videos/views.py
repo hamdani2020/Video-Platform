@@ -83,3 +83,5 @@ class DeleteVideo(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         video = self.get_object()
         return self.request.user == video.user
+    
+# Video Category
