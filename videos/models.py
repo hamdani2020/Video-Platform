@@ -13,7 +13,17 @@ class Videos(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
-# Comment Model
+class Category(models.Model):
+    name = models.CharField(max_length=30)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
+
+
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     video = models.ForeignKey('Videos', on_delete=models.CASCADE)
@@ -22,13 +32,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'User: {self.user} | Created On: {self.created_on.strftime("%b %d %Y %I:%M %p")}'
-
-class Category(models.Model):
-    name = models.CharField(max_length=30)
-
-    def __str__(self):
-        return self.name
-    
-    class Meta:
-        verbose_name = "Category"
-        verbose_name_plural = "Categories"

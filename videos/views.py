@@ -25,7 +25,7 @@ class CreateVideo(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse('video-detail', kwargs={'pk': self.object.pk})
 # Detail Video Class
-class DetailVideo(DetailView):
+class DetailVideo(View):
     def get(self, request, pk, *args, **kwargs):
         video = Videos.objects.get(pk=pk)
 
@@ -36,11 +36,11 @@ class DetailVideo(DetailView):
         context = {
             'object': video,
             'comments': comments,
-            'form': form,
-            'categories': categories
+            'categories': categories,
+            'form': form
         }
         return render(request, 'videos/detail_video.html', context)
-    
+
     def post(self, request, pk, *args, **kwargs):
         video = Videos.objects.get(pk=pk)
 
@@ -56,14 +56,14 @@ class DetailVideo(DetailView):
         comments = Comment.objects.filter(video=video).order_by('-created_on')
         categories = Videos.objects.filter(category=video.category)[:15]
 
-        context ={
+        context = {
             'object': video,
             'comments': comments,
-            'form': form,
-            'categories': categories
-
+            'categories': categories,
+            'form': form
         }
         return render(request, 'videos/detail_video.html', context)
+
 # Update Video
 class UpdateVideo(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Videos
