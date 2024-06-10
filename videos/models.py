@@ -11,6 +11,7 @@ class Videos(models.Model):
     video_file = models.FileField(upload_to='uploads/video_files', validators=[FileExtensionValidator(allowed_extensions=['mp4', 'webm'])])
     thumbnail = models.FileField(upload_to='uploads/thumbnails', validators=[FileExtensionValidator(allowed_extensions=['jpeg', 'png', 'jpg'])])
     date_posted = models.DateTimeField(default=timezone.now)
+    category = models.ForeignKey('Category', on_delete=models.CASCADE)
 
 # Comment Model
 class Comment(models.Model):
