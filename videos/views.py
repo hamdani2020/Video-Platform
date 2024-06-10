@@ -13,9 +13,11 @@ class Index(ListView):
     model = Videos
     template_name = 'videos/index.html'
     order_by = '-date_posted'
+
+
 class CreateVideo(LoginRequiredMixin, CreateView):
     model = Videos
-    fields = ['title', 'description', 'video_file', 'thumbnail']
+    fields = ['title', 'description', 'video_file', 'thumbnail', 'category']
     template_name = 'videos/create_video.html'
 
     def form_valid(self, form):
@@ -24,6 +26,7 @@ class CreateVideo(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('video-detail', kwargs={'pk': self.object.pk})
+    
 # Detail Video Class
 class DetailVideo(View):
     def get(self, request, pk, *args, **kwargs):
