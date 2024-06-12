@@ -172,6 +172,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Signin
 LOGIN_REDIRECT_URL = 'index'
 
+#Profiles
+# Additions to Sign Up Form
+ACCOUNT_SIGNUP_FORM_CLASS = 'profiles.forms.ProfileForm'
+
+# SMTP setup
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
