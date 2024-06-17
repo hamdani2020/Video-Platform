@@ -14,11 +14,11 @@ import os
 from dotenv import load_dotenv
 from pathlib import Path
 import dj_database_url
-from whitenoise import WhiteNoise
+#from whitenoise import WhiteNoise
 
-import cloudinary
+import cloudinary_storage
+import cloudinary.api
 import cloudinary.uploader
-from cloudinary.utils import cloudinary_url
 
 
 load_dotenv()
@@ -33,7 +33,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
 
@@ -50,12 +50,10 @@ SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
+    #'cloudinary_storage',
     'videos',
     'profiles',
     'django.contrib.sites',
-
-    'cloudinary_storage',
-    'cloudinary',
 
     'allauth',
     'allauth.account',
@@ -68,6 +66,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -157,9 +157,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_URL = '/media/'  # or any prefix you choose
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+
 #STATICFILES_DIRS = [
  #   BASE_DIR / "static",
 #]
@@ -171,9 +171,13 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Media files
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_URL = '/media/'
+
+# Media files
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
@@ -212,3 +216,4 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': os.environ.get('API_SECRET'),
 }
 
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
