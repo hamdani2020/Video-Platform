@@ -22,8 +22,8 @@ Paul Leonard, a video creator, seeks a tailored video hosting platform to addres
 ![image](/screenshot/sign%20in.png)
 - Password Reset
 -![image](/screenshot/pr.png)
-2. **Navigate Video Pages**: Users should be able to browse through different video pages seamlessly.
-3. **Share Videos**: Users should have the ability to share links to videos across various pages.
+2. **Share Videos**: Users should have the ability to share links to videos across various pages.
+![image](/screenshot/share.png)
 
 ### Admin
 1. **Upload Videos**: Administrators should have the capability to upload videos along with titles and descriptions.
