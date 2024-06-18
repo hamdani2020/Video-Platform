@@ -36,7 +36,6 @@ Paul Leonard, a video creator, seeks a tailored video hosting platform to addres
 
 ![image](/screenshot/s2.png)
 ## Deliverables
-- **Web Application Source Code**: Hosted on GitHub with proper Git flow, including a well-structured README file.
 - **ER Diagram**: Database design illustrating the relationships between entities.
 - **Deployed Link**: [live demo](https://lusitech.pythonanywhere.com/)
 

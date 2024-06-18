@@ -12,6 +12,8 @@ class Videos(models.Model):
     thumbnail = models.FileField(upload_to='uploads/thumbnails', validators=[FileExtensionValidator(allowed_extensions=['jpeg', 'png', 'jpg'])])
     date_posted = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
+    next_video = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='previous_video_set')
+    previous_video = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='next_video_set')
 
 class Category(models.Model):
     name = models.CharField(max_length=30)

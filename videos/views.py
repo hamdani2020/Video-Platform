@@ -67,17 +67,6 @@ class DetailVideo(View):
             'form': form
         }
         return render(request, 'videos/detail_video.html', context)
-    
-    def nextPrev(request, pk):
-        video = get_object_or_404(Videos, pk=pk)
-        next_video = Videos.objects.filter(pk__gt=video.pk).order_by('pk').first()
-        prev_video = Videos.objects.filter(pk__lt=video.pk).order_by('pk').first()
-        context = {
-            'video': video,
-            'next_video': next_video,
-            'prev_video': prev_video
-        }
-        return render(request, 'videos/detail_video.html', context)
 
 # Update Video
 class UpdateVideo(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -133,3 +122,16 @@ class SearchVideo(View):
         }
 
         return render(request, 'videos/search.html', context)
+    
+
+
+def video_detail(request, video_id):
+    video = get_object_or_404(Videos, id=video_id)
+    next_video = video.next_video
+    previous_video = video.previous_video
+    context = {
+        'video': video,
+        'next_video': next_video,
+        'previous_video': previous_video,
+    }
+    return render(request, 'video_detail.html', context)

@@ -22,16 +22,6 @@
                         <a class="category-link" href="{% url 'category-list' object.category.pk %}">{{ object.category }}</a>
 					</div>
 
-                    <!--Navigation Buttons-->
-                    <div>
-                        {% if prev_video %}
-                        <a href="{% url 'video_detail' pk=prev_video.pk %}">Previous</a>
-                        {% endif %}
-                        {% if next_video %}
-                        <a href="{% url 'video_detail' pk=next_video.pk %}">Next</a>
-                        {% endif %}
-                    </div>
-
 					<div class="col-md-6 text-muted text-right">
 						<ion-icon class="video-icons" name="share-social-outline" type="button"  data-toggle="modal" data-target="#exampleModal">
                         Share
@@ -60,7 +50,7 @@
 			</div>
 		</div>
 
-		{% if object.uploader == user %}
+		{% if object.user == user %}
 			<a class="video-icons icon-color" href="{% url 'video-update' object.pk %}"><ion-icon name="pencil-outline"></ion-icon></a>
 			<a class="video-icons icon-color" href="{% url 'video-delete' object.pk %}"><ion-icon name="close-outline"></ion-icon></a>
 		{% endif %}
