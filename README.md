@@ -16,6 +16,12 @@ Paul Leonard, a video creator, seeks a tailored video hosting platform to addres
 ## Customer Requirements
 ### Users
 1. **Signup & Login**: Users should register and log in using an email and password. Account verification is necessary. A reset password feature should be provided for recovering lost passwords.
+- Register
+![image](/screenshot/signup.png)
+- Log in
+![image](/screenshot/sign%20in.png)
+- Password Reset
+-![image](/screenshot/pr.png)
 2. **Navigate Video Pages**: Users should be able to browse through different video pages seamlessly.
 3. **Share Videos**: Users should have the ability to share links to videos across various pages.
 
