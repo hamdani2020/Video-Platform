@@ -210,10 +210,10 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 #STATIC_ROOT = BASE_DIR / "staticfiles"
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'doaek8cq2',
-    'API_KEY': os.environ.get('API_KEY'),
-    'API_SECRET': os.environ.get('API_SECRET'),
-}
+#CLOUDINARY_STORAGE = {
+#    'CLOUD_NAME': 'doaek8cq2',
+ #   'API_KEY': os.environ.get('API_KEY'),
+ #   'API_SECRET': os.environ.get('API_SECRET'),
+#
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.RawMediaCloudinaryStorage'

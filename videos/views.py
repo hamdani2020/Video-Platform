@@ -8,6 +8,7 @@ from django.views import View
 from .forms import CommentForm
 from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.shortcuts import render, get_object_or_404
 
 class Index(ListView):
     model = Videos
@@ -64,6 +65,17 @@ class DetailVideo(View):
             'comments': comments,
             'categories': categories,
             'form': form
+        }
+        return render(request, 'videos/detail_video.html', context)
+    
+    def nextPrev(request, pk):
+        video = get_object_or_404(Videos, pk=pk)
+        next_video = Videos.objects.filter(pk__gt=video.pk).order_by('pk').first()
+        prev_video = Videos.objects.filter(pk__lt=video.pk).order_by('pk').first()
+        context = {
+            'video': video,
+            'next_video': next_video,
+            'prev_video': prev_video
         }
         return render(request, 'videos/detail_video.html', context)
 

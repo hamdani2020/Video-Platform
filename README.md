@@ -23,12 +23,8 @@ Paul Leonard, a video creator, seeks a tailored video hosting platform to addres
 1. **Upload Videos**: Administrators should have the capability to upload videos along with titles and descriptions.
 
 ## Video Page
-1. **Single Video Display**: Each page should display only one video at a time.
-2. **Navigation Controls**: Next and previous buttons enable users to move between pages, loading new videos.
-3. **Dynamic Button Visibility**: If no further video can be loaded when navigating back or forward, the previous or next button respectively should be hidden.
-4. **Video Controls**: Common video control buttons (play, pause, volume control, etc.) should be provided for user convenience.
-5. **Branding**: The business logo should be prominently displayed at the top of each page.
-6. **Sharing Functionality**: A share button should allow users to generate and share links to specific video pages.
+
+![image](/screenshot/s1.png)
 
 ## Deliverables
 - **Web Application Source Code**: Hosted on GitHub with proper Git flow, including a well-structured README file.

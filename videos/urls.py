@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from . import views
 from .views import CreateVideo, DetailVideo, UpdateVideo, DeleteVideo, VideoCategoryList, SearchVideo
 
 urlpatterns = [
@@ -9,5 +10,6 @@ urlpatterns = [
     path('<int:pk>/update', UpdateVideo.as_view(), name='update-video'),
     path('<int:pk>/delete', DeleteVideo.as_view(), name='delete-video'),
     path('category/<int:pk>', VideoCategoryList.as_view(), name='category-list'),
-    path('search/', SearchVideo.as_view(), name='video-search')
+    path('search/', SearchVideo.as_view(), name='video-search'),
+    path('video/<int:pk>/', DetailVideo.as_view(), name='video_detail')
 ]
